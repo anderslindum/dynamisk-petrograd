@@ -121,6 +121,8 @@ main {
 
 main img {
     max-height: 241px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .spacearound {
@@ -129,7 +131,7 @@ main img {
 }
 
 .imgModal {
-    max-height: 400px;
+    max-height: 1000px;
 }
 
 

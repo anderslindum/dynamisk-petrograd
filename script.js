@@ -8,7 +8,6 @@ function sidenVises() {
 
 
 
-
     document.querySelector(".filterknap_vegetar").addEventListener("click", filterVegetar);
 
     //    document.querySelector(".filterknap_udsolgt").addEventListener("click", filterUdsolgt);
@@ -32,6 +31,7 @@ function filterVegetar(event) {
     ikkeVegetarListe.forEach(div => div.classList.toggle("hide"));
 
     event.preventDefault();
+
 }
 
 //function filterUdsolgt(event) {
@@ -55,6 +55,11 @@ function filterTilbud(event) {
     // skjul dem - tilføj klassen "hide"
     tilbudsListe.forEach(div => div.classList.toggle("hide"));
 
+    // fjern headlines der ikke har tilbud
+    document.querySelector(".dessertliste").classList.toggle("hide");
+    document.querySelector(".drikkevarerliste").classList.toggle("hide");
+    document.querySelector(".sideorders").classList.toggle("hide");
+
     event.preventDefault();
 }
 
@@ -66,6 +71,11 @@ function filterAlkohol(event) {
 
     // skjul dem - tilføj klassen "hide"
     alkoholsListe.forEach(div => div.classList.toggle("hide"));
+
+    // fjern headlines der ikke har alkohol
+    document.querySelector(".forretliste").classList.toggle("hide");
+    document.querySelector(".dessertliste").classList.toggle("hide");
+    document.querySelector(".sideorders").classList.toggle("hide");
 
     event.preventDefault();
 }
@@ -149,9 +159,31 @@ function visProdukt(produkt) {
 
     // registrer klik på modalknap
     klon.querySelector(".modalknap").addEventListener("click", modalKnapKlik)
-        // append klon til .produkt_liste
-    document.querySelector(".produktliste").appendChild(klon);
 
+    //        // append klon til .produkt_liste
+    //    document.querySelector(".produktliste").appendChild(klon);
+
+
+    // hvis kategori var forret, append til forretliste
+    if (produkt.kategori == "forretter") {
+        document.querySelector(".forretliste").appendChild(klon);
+    }
+    // hvis kategori var hovedret, append til hovedretliste
+    else if (produkt.kategori == "hovedretter") {
+        document.querySelector(".hovedretliste").appendChild(klon);
+    }
+    // hvis kategori var desserter, append til desserterliste
+    else if (produkt.kategori == "desserter") {
+        document.querySelector(".dessertliste").appendChild(klon);
+    }
+    // hvis kategori var drikkevarer, append til drikkevarerliste
+    else if (produkt.kategori == "drikkevarer") {
+        document.querySelector(".drikkevarerliste").appendChild(klon);
+    }
+    // hvis kategori var sideorders, append til sideordersliste
+    else if (produkt.kategori == "sideorders") {
+        document.querySelector(".sideorders").appendChild(klon);
+    }
 
 }
 
