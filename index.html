@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Petrograd</title>
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,13 +22,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand" id="logo">Restaurant Petrograd</a>
+                    <a href="#" class="navbar-brand" id="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="example">
                     <ul class="nav navbar-nav" id="navigation-links">
-                        <li class="active"><a href="#">Menu</a></li>
-                        <li><a href="#">Bestilling</a></li>
-                        <li><a href="#">Kontakt</a></li>
+
+                        <li><a href="#forret">FORRETTER</a>
+                        </li>
+                        <li><a href="#hovedret">HOVEDRETTER</a></li>
+                        <li><a href="#dessert">DESSERTER</a></li>
+                        <li><a href="#drikkevare">DRIKKEVARER</a></li>
+                        <li><a href="#sideorder">SIDEORDERS</a></li>
                     </ul>
                     <form class="navbar-form navbar-right" role="search">
                         <div class="form-group">
@@ -40,10 +45,12 @@
     </header>
 
     <div class="splashImg">
-        <div class="container col-xs-8  logo"></div>
+        <div class="container col-xs-8 hidden-xs logo"></div>
         <div class="container">
             <div class="farve-overlay">
-                <h2>Restaurant Petrograd</h2></div>
+                <h2 class="hidden-xs"><span class="firstletterHL">R</span>estaurant <span class="firstletterHL">P</span>etrograd</h2>
+                <h2 class="visible-xs"><span class="firstletterHL">P</span>etrograd</h2>
+            </div>
         </div>
     </div>
 
@@ -92,10 +99,11 @@
         </div>
         <template id="modal_template">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><span class="data_navn">DATA_NAVN</span></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true" class="xButtom">&times;</span>
                 </button>
+                <h3 class="modal-title" id="exampleModalLabel"><span class="data_navn ModalNavn">DATA_NAVN</span></h3>
+
             </div>
             <div class="modal-body">
                 <img class="img-responsive data_billede imgModal" src="imgs/medium/bondeplatte-md.jpg" alt="">
@@ -104,10 +112,10 @@
                     <h4 class="rabatpris">Pris: <span class="data_rabatpris">DATA_RABATPRIS</span>,-</h4>
                     <p class="data_langbeskrivelse">DATA_LANGBESKRIVELSE</p>
                     <div class="ekstra_og_relaterede">
-                        <h5>Oprindelse: <span class="data_oprindelsesregion">DATA_OPRINDELSESREGION</span></h5>
-                        <h5>Allergi: <span class="data_allergener">DATA_ALLERGENER</span> </h5>
-                        <h5>Alkoholprocenter: <span class="data_alkoholprocent">DATA_ALKOHOLPROCENT</span></h5>
-                        <h5>Stjerner: <span class="data_stjerner">DATA_STJERNER</span></h5>
+                        <h5>Oprindelse: <span class="data_oprindelsesregion h5text">DATA_OPRINDELSESREGION</span></h5>
+                        <h5>Allergi: <span class="data_allergener h5text">DATA_ALLERGENER</span> </h5>
+                        <h5>Alkoholprocenter: <span class="data_alkoholprocent h5text">DATA_ALKOHOLPROCENT</span></h5>
+                        <h5>Stjerner: <span class="data_stjerner h5text4">DATA_STJERNER</span></h5>
                     </div>
                     <div class="ekstra_og_pris">
                         <section class="ekstrainfo"></section>
@@ -116,7 +124,7 @@
                 </article>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary closeButtom" data-dismiss="modal">Close</button>
 
             </div>
         </template>
@@ -155,28 +163,38 @@
             </template>
             <!--    forret 1 slut     -->
 
-            <div class="row forretliste">
-                <h2>Forretter</h2>
+
+            <div class="row forretliste bc" id="forret">
+                <hr>
+                <h2 class="headline text-uppercase"><span class="firstletterHL">F</span>orretter</h2>
                 <!-- har skal forretter lægges ind -->
             </div>
 
-            <div class="row hovedretliste">
-                <h2>Hovedretter</h2>
+
+            <div class="row hovedretliste bc" id="hovedret">
+                <hr>
+                <h2 class="headline text-uppercase"><span class="firstletterHL">H</span>ovedretter</h2>
                 <!-- har skal hovedretter lægges ind -->
             </div>
 
-            <div class="row dessertliste">
-                <h2>Desserter</h2>
+
+            <div class="row dessertliste bc" id="dessert">
+                <hr>
+                <h2 class="headline text-uppercase"><span class="firstletterHL">D</span>esserter</h2>
                 <!-- har skal dessertliste lægges ind -->
             </div>
 
-            <div class="row drikkevarerliste">
-                <h2>Drikkevarer</h2>
+
+            <div class="row drikkevarerliste bc" id="drikkevare">
+                <hr>
+                <h2 class="headline text-uppercase"><span class="firstletterHL">D</span>rikkevarer</h2>
                 <!-- har skal drikkevarerliste lægges ind -->
             </div>
 
-            <div class="row sideorders">
-                <h2>Sideorders</h2>
+
+            <div class="row sideorders bc" id="sideorder">
+                <hr>
+                <h2 class="headline text-uppercase"> <span class="firstletterHL">S</span>ideorders</h2>
                 <!-- har skal sideorders lægges ind -->
             </div>
 

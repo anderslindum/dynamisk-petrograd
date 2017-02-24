@@ -263,3 +263,19 @@ function visModalProdukt(produkt) {
     document.querySelector(".modal-content").appendChild(klon);
 
 }
+
+//advangseret kode til et smooth scroll fra <a> tags til id="" længere nede på siden
+// med JQurey
+
+$('a[href*="#"]:not([href="#"])').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
